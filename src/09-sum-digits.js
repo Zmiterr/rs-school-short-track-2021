@@ -6,12 +6,16 @@
  * @return {Number}
  *
  * @example
- * For 100, the result should be 1 (1 + 0 + 0 = 1)
- * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
+ * For 100, the  retSummult should be 1 (1 + 0 + 0 = 1)
+ * For 91, the  retSummult should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-function getSumOfDigits(/* n */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(n) {
+  // throw new Error('Not implemented');
+  let retSumm = n;
+  if (retSumm / 10 < 1) return retSumm;
+  retSumm = String(retSumm).split('').reduce((summ, e) => +summ + +e);
+  return getSumOfDigits(retSumm);
 }
 
 module.exports = getSumOfDigits;
